@@ -1,0 +1,31 @@
+<body>
+	<div>
+		<table border="1" cellpadding="5" cellspacing="5" width="800" height="200">
+		<caption><h2> Bug Ticket </h2></caption>	
+		  <tr>
+		    <th> Ticket </th>
+		    <th> Submitted By </th>
+		    <th> Title </th>		
+		    <th> Description </th>
+		    <th> Tracker </th>
+		    <th> Severity </th>
+		    <th> Assignee </th>
+		    <th> State </th>
+		    <th> Created Time </th><br>
+		  </tr>
+	  	
+		  <tr>
+		    <td> <%= @ticket.id %> </td>    
+		    <td> <%= @ticket.submit_by %> </td>		
+		    <td> <%= @ticket.title %> </td>		
+		   	<td style="max-width:450px; word-wrap: break-word;"> <%= @ticket.body %> </td>	
+		   	<td> <%= @ticket.tracker %> </td>	
+		   	<td> <%= @ticket.severity %> </td>	
+		    <td> <%= @ticket.assignee %> </td>	
+		   	<td> <%= @ticket.state %> </td>	
+		   	<td> <%= @ticket.created_at.strftime("%B %e, %Y, %I:%M %p") %> </td>	
+		  </tr>
+	
+		</table>
+	</div> 
+</body>

@@ -1,0 +1,5 @@
+<h2>Edit or delete ticket </h2>
+
+<%= render 'tickets/ticket_form' %><br>
+
+<%= button_to 'DELETE TICKET', ticket_path, method: :delete, data: { confirm: 'Are you sure?' } %>

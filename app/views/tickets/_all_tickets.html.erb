@@ -1,0 +1,32 @@
+<body>
+	<div>
+		<table border="1" cellpadding="5" cellspacing="5" width="1000">
+		  <tr><br>
+		    <th> Ticket <br>
+		    	<span style="font-weight:normal; font-style:italic; font-size:11px;"> (edit) </span></th>
+		    <th> Submitted By </th>
+		    <th> Title <br>
+		    	<span style="font-weight:normal; font-style:italic; font-size:11px;"> (view ticket details) </span></th>		
+		    <th> Description </th>
+		    <th> Tracker </th>
+		    <th> Severity </th>
+		    <th> Assignee </th>
+		    <th> State </th>
+		    <th> Created Time </th><br>
+		  </tr>
+		  <% @tickets.each do |bug| %>
+		  <tr>
+		    <td> <%= link_to bug.id, edit_ticket_path(bug) %> </td> 
+		    <td> <%= bug.submit_by %> </td>		
+		    <td> <%= link_to bug.title, ticket_path(bug) %> </td>	
+		    <td> <%= bug.body.first(45)  %> </td>	
+		   	<td> <%= bug.tracker %> </td>	
+		   	<td> <%= bug.severity %> </td>	
+		    <td> <%= bug.assignee %> </td>	
+		   	<td> <%= bug.state %> </td>	
+		   	<td> <%= bug.created_at.strftime("%B %e, %Y, %I:%M %p") %> </td>	
+		  </tr>
+		  <% end %>
+		</table>
+	</div> 
+</body>
