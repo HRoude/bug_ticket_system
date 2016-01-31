@@ -1,5 +1,7 @@
 class Ticket < ActiveRecord::Base
 
+	validates_presence_of :user_id, :email
+
 	validates :tracker, :severity, :state,	presence: true
 
 	validates :submit_by, presence: true,
