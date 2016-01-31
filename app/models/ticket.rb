@@ -1,5 +1,9 @@
 class Ticket < ActiveRecord::Base
 
+	belongs_to :user
+
+	scope :descending, -> { reorder(created_at: :desc) }
+
 	validates :tracker, :severity, :state,	presence: true
 
 	validates :submit_by, presence: true,
